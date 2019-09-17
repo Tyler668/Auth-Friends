@@ -1,7 +1,7 @@
 import React from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-class Login extends React.Component {
+class CreateFriend extends React.Component {
     state = {
         newFriend: {
             name: '',
@@ -12,7 +12,7 @@ class Login extends React.Component {
 
     handleChange = e => {
         this.setState({
-            Friends: {
+            newFriend: {
                 ...this.state.newFriend,
                 [e.target.name]: e.target.value
             }
@@ -22,13 +22,10 @@ class Login extends React.Component {
 
     NewFriend = e => {
         e.preventDefault();
-        // axiosWithAuth ==> ?? an axios instance; .post() ==> ?? promise
         axiosWithAuth()
             .post('/friends', this.state.newFriend)
             .then(res => {
-               console.log(res)
-                // redirect to the apps main page?
-                this.props.history.push('/protected');
+                console.log(res)
             })
             .catch(err => console.log(err));
     };
@@ -36,28 +33,25 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.newFriend}>
+                <form onSubmit={this.NewFriend}>
                     <input
-                        type="text"
-                        name="username"
-                        value={this.state.newFriend.username}
-                        onChange={this.handleChange}
-                    />
-                    <input
-                        type="text"
+                        placeholder='Name'
+                        type="name"
                         name="name"
                         value={this.state.newFriend.name}
                         onChange={this.handleChange}
                     />
-                                        <input
-                        type="text"
+                    <input
+                        placeholder='Age'
+                        type="age"
                         name="age"
                         value={this.state.newFriend.age}
                         onChange={this.handleChange}
                     />
-                                        <input
-                        type="text"
-                        name="name"
+                    <input
+                        placeholder='E-Mail'
+                        type="email"
+                        name="email"
                         value={this.state.newFriend.email}
                         onChange={this.handleChange}
                     />
@@ -68,4 +62,4 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default CreateFriend;

@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+
+.friend-item{
+  border: 1px solid black;
+}

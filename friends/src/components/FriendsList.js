@@ -31,10 +31,14 @@ class FriendsList extends React.Component {
                 <ol>
                     {listOfFriends.map(item => (
                         <li className='friend-item'>
-                            <span>-{item.name}</span>
+                            <span>-{item.name}</span><br/>
+                            <span>-{item.age}</span><br/>
+                            <span>-{item.email}</span>
                         </li>
                     ))}
                 </ol>
+                <br/>
+                <br/>
             </div>
         );
     }

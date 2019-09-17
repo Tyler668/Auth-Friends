@@ -26,6 +26,10 @@ class CreateFriend extends React.Component {
             .post('/friends', this.state.newFriend)
             .then(res => {
                 console.log(res)
+                const inputs = document.querySelectorAll('input');
+                inputs.forEach(i =>{
+                    i.value = ''
+                })
             })
             .catch(err => console.log(err));
     };
@@ -33,7 +37,7 @@ class CreateFriend extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.NewFriend}>
+                <form id = 'myForm' onSubmit={this.NewFriend}>
                     <input
                         placeholder='Name'
                         type="name"

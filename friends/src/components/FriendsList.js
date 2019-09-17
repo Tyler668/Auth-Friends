@@ -25,16 +25,16 @@ class FriendsList extends React.Component {
     render() {
 
         console.log(this.state.friends);
-        const listOfFriends = this.state.friends;
+        const listOfFriends = this.state.Friends;
         return (
             <div className='friend-list'>
-                {/* <ol>
-                    {listOfFriends.map(item => {
+                <ol>
+                    {listOfFriends.map(item => (
                         <li className='friend-item'>
-                            <span>-{}</span>
+                            <span>-{item.name}</span>
                         </li>
-                    })}
-                </ol> */}
+                    ))}
+                </ol>
             </div>
         );
     }

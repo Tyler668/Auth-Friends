@@ -3,25 +3,34 @@ import Axios from 'axios';
 
 export const Login = () => {
 
-    const submitLogin = (e) =>{
+    const submitLogin = (e) => {
         e.preventDefault();
         Axios.post('/user', {
             firstName: 'Fred',
             lastName: 'Flintstone'
-          })
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
+
     return (
-        <div className='login-container'>
-            <input className='username' placeholder='Username' >Username</input>
-            <input className='password' placeholder='Password' type='password' >Password</input>
-            <button type = 'submit' className = 'login-button'>Log In</button>
+        <div className = 'login-container'> 
+                <input
+                    type="text"
+                    name="username"
+                />
+                <input
+                    type="password"
+                    name="password"
+                />
+                <button>Log in</button>
         </div>
     );
+
 }
+

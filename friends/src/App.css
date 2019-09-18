@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+form{
+  display: flex;
+  margin: auto;
+  width: 15%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.friend-item{
+  margin: auto;
+  border: 1px solid black;
+  width: 15%;
+}
